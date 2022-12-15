@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rajat">
+    <meta name="description" content="guess the number mini-game">
+    <meta name="keywords" content="html, css, javascript, guess-the-number-game, game, guess-number">
+    <title>Guess The Number</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik:wght@700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <div class="slider">
+        <div class="arrow"></div>
+      </div>
+      <div class="main">
+        <label for="input-num">Guess a number between <span>0</span> and <span>100</span></label>
+        <div class="guess">
+          <input type="text" id="input-num" autofocus>
+          <span></span>
+          <button type="submit">Guess</button>
+        </div>
+        <p>Tries left: <span>10</span></p>
+      </div>
+      <div class="used">
+        <p><span></span></p>
+      </div>
+    </main>
+  </body>
+</html>

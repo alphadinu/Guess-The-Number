@@ -1,0 +1,150 @@
+:root {
+    --page-color: #371B58;
+    --primary-bg: #4C3575;
+    --secondary-bg: #7858A6;
+    --heading-fg: #dbc1ff;
+    --input-bg: #7566a2;
+    --input-fg: #d1c0e9;
+    --re-state-contrast-fg: #d18024;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--page-color);
+    font-family: 'Roboto Mono', monospace;
+    color: var(--heading-fg);
+}
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 440px;
+    display: grid;
+    grid-template-columns: 10px auto;
+    grid-template-areas: 'slider main' 'used used';
+}
+.slider {
+    grid-area: slider;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(0deg, rgba(217,36,36,1) 0%, rgba(213,86,36,1) 5%, rgba(201,214,36,1) 25%, rgba(175,214,36,1) 35%, rgba(82,214,37,1) 45%, rgba(39,154,0,1) 50%, rgba(39,154,0,1) 50%, rgba(82,214,37,1) 55%, rgba(175,214,36,1) 65%, rgba(201,214,36,1) 75%, rgba(214,72,36,1) 95%, rgba(217,36,36,1) 100%);
+    position: relative;
+    left: 1px;
+    border-top-left-radius: 10px;
+}
+.arrow {
+    width: 0;
+    height: 0;
+    border-top: 8px transparent solid;
+    border-bottom: 8px transparent solid;
+    border-left: 10px solid #b391e2;
+    position: relative;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: 0.2s;
+}
+.main {
+    grid-area: main;
+    padding: 16px 24px;
+    text-align: center;
+    background-color: var(--primary-bg);
+    border-top-right-radius: 20px;
+}
+label {
+    display: inline-block;
+    width: 375px;
+    margin: 10px 0 20px 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 225%;
+    font-weight: 900;
+}
+.guess {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.guess > * {
+    margin: 0 20px;
+}
+.guess > span {
+    display: inline-block;
+    width: 0;
+    height: 35px;
+    color: var(--re-state-contrast-fg);
+    font-size: 150%;
+    font-weight: bold;
+    transition: 0.2s;
+    overflow: hidden;
+    margin: 0;
+}
+.guess > span.re-state {
+    width: 210px;
+    margin-right: 10px;
+}
+input {
+    outline: none;
+    border: none;
+    padding: 8px 12px;
+    width: 50px;
+    border-radius: 50px;
+    font-family: inherit;
+    background: var(--input-bg);
+    color: var(--input-fg);
+    font-size: larger;
+    transition: 0.2s;
+}
+input.re-state {
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+button {
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    font-family: inherit;
+    background: var(--secondary-bg);
+    color: inherit;
+    font-weight: bold;
+    transition: 0.2s;
+    cursor: pointer;
+}
+button:hover {
+    box-shadow: 0 0 8px #7858A6;
+}
+button.re-state {
+    font-size: 90%;
+    box-shadow: 0 0 12px #371b58;
+}
+.main > p {
+    padding: 5px 0;
+}
+.main > p > span {
+    transition: 0.2s;
+}
+.main > p > span.re-state {
+    color: var(--re-state-contrast-fg);
+    font-size: larger;
+}
+.used {
+    grid-area: used;
+    background-color: var(--secondary-bg);
+    transition: 0.2s;
+    min-height: 41px;
+    border-radius: 0 0 20px 10px;
+}
+.used > p {
+    margin: 10px 20px;
+}
+.used span {
+    color: transparent;
+    transition: 0.2s;
+}
+.used span.re-state {
+    color: var(--heading-fg);
+}
